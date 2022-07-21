@@ -1,0 +1,19 @@
+---
+- name: Add Octo-Cli Key
+  apt_key:
+    url: https://apt.octopus.com/public.key
+    state: present
+
+- name: Add Octo-Cli Repository
+  apt_repository:
+    repo: deb https://apt.octopus.com stable main
+    state: present
+
+- name: Update apt and install Octo-Cli
+  apt:
+    pkg:
+      - octopuscli
+    state: latest
+    update_cache: true
+  register: octopuscli_ins_output
+- debug: var=octopuscli_ins_output
