@@ -8,5 +8,5 @@ add-apt-repository --yes --update ppa:ansible/ansible
 apt-get install ansible -y
 ansible-galaxy collection install community.general
 pushd /vagrant
-ansible-playbook provisioning/playbook.yml
+ansible-playbook provisioning/ansible/playbook.yml
 popd
