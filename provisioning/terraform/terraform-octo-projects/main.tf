@@ -7,13 +7,13 @@ resource "octopusdeploy_project" "SampleProject_1" {
   auto_create_release                  = false
   default_guided_failure_mode          = "EnvironmentDefault"
   default_to_skip_if_already_installed = false
-  description                          = "The development project."
+  description                          = "Sample Octupus Deploy Development Project"
   discrete_channel_release             = false
   is_disabled                          = false
   is_discrete_channel_release          = false
   is_version_controlled                = false
   lifecycle_id                         = "Lifecycles-123"
-  name                                 = "Development Project (OK to Delete)"
+  name                                 = "Sample Project 1"
   project_group_id                     = "ProjectGroups-Sample"
   tenanted_deployment_participation    = "TenantedOrUntenanted"
 
