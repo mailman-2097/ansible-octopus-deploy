@@ -39,3 +39,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Files that need not be checked in
+docker-compose.yml
+.env
