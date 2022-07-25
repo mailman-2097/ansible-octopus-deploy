@@ -27,7 +27,7 @@ config.vm.define "ubuntudocker", autostart: SRVR_COND	do |ubuntudocker|
 
 		ubuntudocker.vm.provider :virtualbox do |vb|
 					vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-					vb.customize ["modifyvm", :id, "--memory", 4096]
+					vb.customize ["modifyvm", :id, "--memory", 8097]
 					vb.customize ["modifyvm", :id, "--name", "ubuntudocker"]
 					vb.customize ["modifyvm", :id, "--cpus", "1"]
 		end
