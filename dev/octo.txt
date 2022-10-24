@@ -1,0 +1,22 @@
+docker container exec <container name/ID> /Octopus/Octopus.Server show-master-key --console --instance octosrv
+
+sudo docker-compose --project-name Octopus up -d
+sudo docker-compose -p Octopus ps
+sudo docker-compose -p Octopus restart octopus-server
+sudo docker-compose -p Octopus stop
+
+octo list-environments --server="http://ubuntudocker.local:8080" --apiKey="API-XA3XFFN6UZDLXHXFHDBQEKQJR53TXR6" --space="Default"
+
+[PT]
+sudo /opt/octopus/tentacle/Tentacle service --install --start
+
+sudo /opt/octopus/tentacle/configure-tentacle.sh
+
+
+sudo systemctl restart Tentacle.service
+
+sudo /opt/octopus/tentacle/Tentacle create-instance --instance "Tentacle" --config "/etc/octopus/Tentacle/tentacle-Tentacle.config"
+sudo /opt/octopus/tentacle/Tentacle new-certificate --instance "Tentacle" --if-blank
+sudo /opt/octopus/tentacle/Tentacle configure --instance "Tentacle" --app "/home/Octopus/Applications" --noListen "True" --reset-trust
+sudo /opt/octopus/tentacle/Tentacle register-with --instance "Tentacle" --server "http://ubuntudocker.local:8080" --name "LinuxTentacle2" --comms-style "TentacleActive" --server-comms-port "10943" --apiKey "API-XA3XFFN6UZDLXHXFHDBQEKQJR53TXR6" --space "Default" --environment "Development"  --role "linux"
+sudo /opt/octopus/tentacle/Tentacle service --install --start --instance "Tentacle"

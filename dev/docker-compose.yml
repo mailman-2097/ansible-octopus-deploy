@@ -35,7 +35,7 @@ services:
       DISABLE_DIND: ${DISABLE_DIND}
     ports:
       - 8080:8080
-      - 11111:10943
+      - 10943:10943
     depends_on:
       - db
     container_name: octosrv
